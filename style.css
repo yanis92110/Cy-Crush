@@ -1,0 +1,85 @@
+body{
+    background-color: #fefdd7;
+}
+
+ @font-face { font-family: Sport; src: url('Sport.ttf'); } 
+ @font-face { font-family: FunnySports; src: url('FunnySports.ttf'); } 
+
+#title{
+    color : #008080;
+    text-align: center;
+    font-size: 75px;
+    font-family: Sport;
+    font-weight: lighter;
+}
+
+#title_border{
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 15px 10px 10px black;
+}
+
+#raquettes{
+    z-index: -1;
+    display: block;
+    margin: auto;
+    width: 25%;
+}
+
+#start_button{
+    display: block;
+    margin: auto;
+}
+
+.description{
+    color : #008080;
+    font-family: FunnySports;
+    font-weight: lighter;
+    text-align: center;
+
+}
+
+#start_button {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  background: #57cc99;
+  z-index: 1;
+  display: block;
+  margin: auto;
+}
+#start_button:hover:after {
+  width: 100%;
+  left: 0;
+}
+#start_button:after {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+  background-color: #008080;
+  right: 0;
+}
+#start_button:active {
+  top: 2px;
+}
+
+#comptequestion{
+    width: 100%;
+}
+
