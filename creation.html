@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
-    <title>Création compte</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login et création</title>
+    <link rel="stylesheet" href="styleconnexion.css">
 </head>
-
 <body>
-    <form action="/qlqpart">
-        <ul>
-            <li>
-                <label for="nom">Nom</label>
-                <input type="text" id="nom">
-            </li>
-            <li>
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom">
-            </li>
-            <li>
-                <label for="mail">Email</label>
-                <input type="email" id="mail">
-            </li>
-            <li>
-                <button type="submit">Valider</button>
-            </li>
-        </ul>
+  <h1>Formulaire de connexion et de création de compte</h1>
+
+  <div class="form-container">
+    <form id="loginForm">
+      <h2>Connexion</h2>
+      <div>
+        <label for="loginPseudo">Pseudo</label>
+        <input type="text" id="loginPseudo" required>
+      </div>
+      <div>
+        <label for="loginMdp">Mot de Passe</label>
+        <input type="password" id="loginMdp" required>
+      </div>
+      <button type="submit">Se Connecter</button>
     </form>
+
+    <img id="court" src="tennis_court.jpg">
+
+    <form id="creationForm">
+      <h2>Créer un compte</h2>
+      <div>
+        <label for="signPseudo">Pseudo</label>
+        <input type="text" id="signPseudo" required>
+      </div>
+      <div>
+        <label for="signEmail">Email</label>
+        <input type="email" id="signEmail" required>
+      </div>
+      <div>
+        <label for="signMdp">Mot de passe</label>
+        <input type="password" id="signMdp" required>
+      </div>
+      <div>
+        <label for="signConfirmeMdp">Confirmer le mot de passe</label>
+        <input type="password" id="signConfirmeMdp" required>
+      </div>
+      <button type="submit">S'inscrire</button>
+    </form>
+  </div>
+
+  <script src="scriptcreation.js"></script>
 </body>
+</html>

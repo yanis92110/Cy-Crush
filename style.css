@@ -2,6 +2,18 @@ body{
     background-color: #fefdd7;
 }
 
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
  @font-face { font-family: Sport; src: url('Sport.ttf'); } 
  @font-face { font-family: FunnySports; src: url('FunnySports.ttf'); } 
 
@@ -11,12 +23,19 @@ body{
     font-size: 75px;
     font-family: Sport;
     font-weight: lighter;
+    opacity: 100;
 }
 
-#title_border{
+/*#title_border{
     border: 5px solid black;
     border-radius: 20px;
     box-shadow: 15px 10px 10px black;
+    opacity: 100;
+}*/
+#title_border{
+  border: 5px solid black;
+  border-radius: 20px;
+  opacity:100;
 }
 
 #raquettes{
@@ -24,6 +43,7 @@ body{
     display: block;
     margin: auto;
     width: 25%;
+    opacity: 0;
 }
 
 #start_button{
@@ -31,12 +51,12 @@ body{
     margin: auto;
 }
 
-.description{
+#description{
     color : #008080;
     font-family: FunnySports;
     font-weight: lighter;
     text-align: center;
-
+    opacity: 100;
 }
 
 #start_button {
@@ -57,6 +77,7 @@ body{
   z-index: 1;
   display: block;
   margin: auto;
+  opacity: 100;
 }
 #start_button:hover:after {
   width: 100%;
