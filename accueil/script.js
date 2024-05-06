@@ -22,5 +22,5 @@ async function lancervideo(){
     button.style.opacity = '0';
     video.play();
     await sleep(2800);
-    window.location.href = "../Accueil/creationjb.html";
+    window.location.href = "../connexion/creation.html";
 }
