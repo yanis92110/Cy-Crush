@@ -25,4 +25,4 @@ if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) &
 
 
 }
-
+?>
