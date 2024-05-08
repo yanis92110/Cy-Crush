@@ -59,10 +59,41 @@ body{
     opacity: 100;
 }
 
-#start_button {
+fieldset{
+  border: 2px solid black;
+  text-align: justify;
+  height: fit-content;
+  padding: 5px;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 3%;
+}
+
+#titleALT{
+  color : #008080;
+  text-align: center;
+  font-size: 75px;
+  font-family: FunnySports;
+  font-weight: lighter;
+  opacity: 100;
+  margin-top: 10%;
+}
+
+#choice{
+  text-align: center;
+  color : #008080;
+  font-family: FunnySports;
+  font-weight: lighter;
+}
+
+#retour{
+  text-align: center;
+}
+
+.start_button {
   min-width: 130px;
   height: 40px;
-  color: #fff;
+  color: black;
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
