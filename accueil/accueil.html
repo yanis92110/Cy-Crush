@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Accueil CY crush</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil CY Roland Garros</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
 
-    <div id="title_border">
-        <h1 id="title">CY Crush</h1>
-    </div>
+    <body>
+
+        <div id="title_border">
+            <h1 id="title">CY Roland Garros</h1>
+        </div>
+        
+        <fieldset>
+            <legend id="description"><h2>Le premier site de rencontres pour tennismen/women</h2></legend> 
+            <p id="p1">
+                Sur ce site, vous aurez l'occasion de trouver le partenaire de tennis idéal pour vos prochaines sessions de sport. 
+                Le site, en se basant sur vos préférences et votre propre profil pourra vous faire rencontrer le tennisman ou la tenniswoman le/la plus adapté(e) à vos attentes.
+                Alors si vous en avez marre de taper contre un mur et si vous avez envie de faire bouger les choses, laissez vous tenter par CY Roland Garros.
     
-    <h2 id="description">Le premier site de rencontres pour tennismen/women</h2>
-    <img src="raquettes.png" alt="raquettes de tennis" id="raquettes">
-
-    <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
-    <button type="button" id="start_button" onclick="lancervideo()">Commencer</button>
-
-    <video id="background-video" muted>
-        <source src="juaniserrovalle_gif_dribbble2.mp4" type="video/mp4">
-    </video>
-
-    <script src="script.js"></script>
+            </p>
+        </fieldset>
+    
+    
+        <video id="background-video" muted>
+            <source src="juaniserrovalle_gif_dribbble2.mp4" type="video/mp4">
+        </video>
+    
+        <br><br> <br><br> <br><br> 
+        <div id="choice">
+            <h2> Alors ? Cela vous tente-t-il ? </h2>
+        </div>
+    
+        <button type="button" class="start_button" onclick="lancervideo()">Je m'inscris !</button><br>
+        <div id="retour">
+            <a href="accueilALT.html"> Une autre fois insha Allah.</a>
+        </div>
+    
+    
     </body>
 
-    </html>
-
+</html>
