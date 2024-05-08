@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login et création</title>
+    <link rel="stylesheet" href="styleconnexion.css">
+</head>
+<body>
+  <h1>Formulaire de connexion et de création de compte</h1>
+  <div class="form-container">
+    <form id="creationForm" action="null.php" method="post">
+        <h2>Compléter son compte</h2>
+         <div id="sexe">
+            <style>
+                #sexe{
+                    text-align: left;
+                }
+                #input{
+                    text-align: left;
+                }
+                #label{
+                    left: 0%;
+                }
+            </style>
+            <p>Sexe:</p>
+            <input type="radio" id="homme" name="drone" value="h"  />
+            <label for="h">Homme</label>
+            <input type="radio" id="femme" name="drone" value="f" />
+            <label for="f">Femme</label>
+        </div>
+        <div>
+          <label for="signEmail">Date de naissance</label>
+          <input type="date" id="signDate" required>
+        </div>
+        <div>
+            <label for="ville">Ville</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="classement">Classement actuel: </label>
+
+            <select name="classement" id="classement">
+              <option value="">--Please choose an option--</option>
+              <option value="Non Classé">Non Classé</option>
+              <option value="40">40</option>
+              <option value="30/5">30/5</option>
+              <option value="30/4">30/4</option>
+              <option value="30/3">30/3</option>
+              <option value="30/2">30/2</option>
+              <option value="30/1">30/1</option>
+              <option value="30">30</option>
+              <option value="15/5">15/5</option>
+              <option value="15/4">15/4</option>
+              <option value="15/3">15/3</option>
+              <option value="15/2">15/2</option>
+              <option value="15/1">15/1</option>
+              <option value="15">15</option>
+              <option value="5/6">5/6</option>
+              <option value="4/6">4/6</option>
+              <option value="3/6">3/6</option>
+              <option value="2/6">2/6</option>
+              <option value="1/6">1/6</option>
+              <option value="0">0</option>
+              <option value="pro">Semi-pro ou pro</option>
+            </select>
+            
+        </div>
+        <div>
+          <label for="dispos">Disponibilités</label>
+          <input type="text">
+        </div>
+        <div>
+            <fieldset>
+                <legend>Caractéristiques tennistiques:</legend>
+                <div>
+                    <label for="taille">Taille</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <input type="radio" id="d" value="d" >
+                    <label for="d">Droitier</label>
+                    <input type="radio" id="g" value="g" >
+                    <label for="g">Gaucher</label>
+                </div>
+                <div>
+                    <input type="radio" id="unemain" value="1" >
+                    <label for="unemain">Revers à une main</label>
+                    <input type="radio" id="deuxmains" value="2">
+                    <label for="deuxmains">Revers à deux mains</label>
+                </div>
+                <div>
+                    <label for="autre">Autre (Style de jeu, service...)</label>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <label for="description"></label>
+                    <textarea>Parlez un peu de vous...</textarea>
+                </div>
+            </fieldset>
+        </div>
+        <button type="submit">S'inscrire</button>
+      </form>
+      <img id="court" src="tennis_court.jpg">
+    
+
+
+    
+  </div>
+  
+  <script src="scriptcreation.js"></script>
+</body>
+</html>
