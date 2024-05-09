@@ -19,7 +19,7 @@ if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
         if ($list_mdp[$indice] === $mdp_login){
             $_SESSION['pseudo'] = $pseudo_login;
             $_SESSION['mdp'] = $mdp_login;
-            $_SESSION['id_user'] = $indice;
+            $_SESSION['id_user'] = $indice + 1;
             if($list_admin[$indice] === 1){
                 header("Location: ../menu/menu_admin.php");
                 exit();
