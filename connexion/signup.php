@@ -7,57 +7,58 @@
 </head>
 <body>
 
-<?php
-session_start();
+    <?php
+    session_start();
 
 
-if (isset($_SESSION['erreur'])) {
-    echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-    unset($_SESSION['erreur']); 
-}
+    if (isset($_SESSION['erreur'])) {
+        echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
+        unset($_SESSION['erreur']); 
+    }
 
-if (isset($_SESSION['erreur_mdp_register'])) {
-    echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-    unset($_SESSION['erreur_mdp_register']); 
-}
+    if (isset($_SESSION['erreur_mdp_register'])) {
+        echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
+        unset($_SESSION['erreur_mdp_register']); 
+    }
 
-?>
+    ?>
 
   <h1>Formulaire de connexion et de création de compte</h1>
   <div class="form-container">
- <!--   <form id="creationForm" action="null.php" method="post">
-        <h2>Compléter son compte</h2>
-         <div id="sexe">
-            <style>
-                #sexe{
-                    text-align: left;
-                }
-                #input{
-                    text-align: left;
-                }
-                #label{
-                    left: 0%;
-                }
-            </style>
-            <p>Sexe:</p>
-            <input type="radio" id="homme" name="drone" value="h"  />
-            <label for="h">Homme</label>
-            <input type="radio" id="femme" name="drone" value="f" />
-            <label for="f">Femme</label>
-        </div>
+
+    <form id="creationForm" action="register.php" method="POST">
+
+        <h2>Créer son compte</h2><br>
+
+        <label for="pseudo"><strong>Pseudo :</strong></label> <input type="text" id="pseudo" name="pseudo" required><br>
+
+        <label for="email"><strong>Email :</strong></label> <input type="email" id="email" name="email" required><br>
+
+        <label for="pass1"><strong>Mot de passe :</strong></label> <input type="password" id="pass1" name="pass1" required><br>
+
+        <label for="signConfirmeMdp"><strong>Confirmer le mot de passe :</strong></label> <input type="password" id="signConfirmeMdp" name="pass2" required>
+
+        <p>------------------------------------------------------------------------------------------</p>
+        
+        <p><strong>Sexe :</strong></p>
+        <div class="rad">
+            <div class="rad2"><label for="sexe">Homme</label> <input type="radio" class="check" name="sexe" value="homme" checked></div>
+            <div class="rad2"><label for="sexe">Femme</label> <input type="radio" class="check" name="sexe" value="femme"></div>
+        </div><br><br>
+
         <div>
-          <label for="signEmail">Date de naissance</label>
-          <input type="date" id="signDate" name="birth" required>
-        </div>
+            <label for="birth"><strong>Date de naissance :</strong></label> <input type="date" name="birth" required>
+        </div><br>
+
         <div>
-            <label for="ville">Ville</label>
-            <input type="text">
-        </div>
+            <label for="ville"><strong>Ville :</strong></label> <input type="text" name="ville" required>
+        </div><br>
+
         <div>
-            <label for="classement">Classement actuel: </label>
+            <label for="classement"><strong>Classement actuel : </strong></label>
 
             <select name="classement" id="classement">
-              <option value="">--Please choose an option--</option>
+              <option value="">--Choisissez une option--</option>
               <option value="Non Classé">Non Classé</option>
               <option value="40">40</option>
               <option value="30/5">30/5</option>
@@ -81,155 +82,46 @@ if (isset($_SESSION['erreur_mdp_register'])) {
               <option value="pro">Semi-pro ou pro</option>
             </select>
             
-        </div>
+        </div><br><br>
+
         <div>
-          <label for="dispos">Disponibilités</label>
-          <input type="text" name="dispo">
-        </div>
+            <label for="dispo"><strong>Disponibilités :</strong></label> <input type="text" name="dispo"> 
+        </div><br>
+
         <div>
             <fieldset>
-                <legend>Caractéristiques tennistiques:</legend>
+                <legend>Caractéristiques tennistiques</legend><br>
+                
                 <div>
-                    <label for="taille">Taille</label>
-                    <input type="text" name="taille">
+                    <label for="taille"><strong>Taille :</strong></label> <input type="text" id="taille">
                 </div>
+
+                <p><strong>Main forte :</strong></p>
+                <div class="rad">
+                    <div class="rad2"><label for="d">Droite</label><input type="radio" class="check" name="mano" value="d"></div>
+                    <div class="rad2"><label for="g">Gauche</label><input type="radio" class="check" name="mano" value="g"></div>
+                </div><br>
+
+                <p><strong>Type de revers :</strong></p>
+                <div class="rev">
+                    <div class="rad2"><label for="1" class="lrevers">Revers à une main</label><input type="radio" class="check" name="revers" value="1"></div>
+                    <div class="rad2"><label for="2" class="lrevers">Revers à deux mains</label><input type="radio" class="check" name="revers" value="2"></div>
+                </div><br>
+
                 <div>
-                    <label for="d">
-                    <input type="radio" id="d" value="d" name="droitier" checked>Droitier
-                    </label>
-                    <label for="g">
-                    <input type="radio" id="g" value="g" name="droitier">Gaucher
-                    </label>
-                </div>
-                <br>
+                    <label for="autre"><strong>Autre (Style de jeu, service...) :</strong></label><br> <textarea name="autre"></textarea>
+                </div><br>
+
+                <p><strong>Informations complémentaires :</strong></p>
                 <div>
-                    <label for="unemain">
-                    <input type="radio" id="unemain" value="1" name="revers" checked>Revers à une main
-                    </label>
-                    <label for="deuxmains">
-                    <input type="radio" id="deuxmains" value="2" name="revers">Revers à deux mains
-                    </label>
-                </div>
-                <div>
-                    <label for="autre">Autre (Style de jeu, service...)</label>
-                    <textarea name="autre"></textarea>
-                </div>
-                <div>
-                    <label for="description"></label>
-                    <textarea name="desc">Parlez un peu de vous...</textarea>
-                </div>
+                    <label for="desc"></label> <textarea name="desc" placeholder="Parlez un peu de vous..."></textarea>
+                </div><br>
+
             </fieldset>
-        </div>
-
-        
+        </div><br><br>
         <button type="submit">S'inscrire</button>
-      </form>-->
-
-
-<form method="POST" action="register.php">
-    <label for="pseudo">Pseudo :</label>
-    <input type="text" id="pseudo" name="pseudo" required><br>
-
-    <label for="date_insc">Date d'inscription :</label>
-    <input type="date" id="date_insc" name="date_insc" required><br>
-
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required><br>
-
-    <label for="pass1">Mot de passe :</label>
-    <input type="password" id="pass1" name="pass1" required><br>
-
-            <label for="signConfirmeMdp">Confirmer le mot de passe</label>
-        <input type="password" name="pass2" id="signConfirmeMdp" required>
-
-    <label for="sexe">Sexe :</label>
-    <select id="sexe" name="sexe" required>
-        <option value="homme">Homme</option>
-        <option value="femme">Femme</option>
-    </select><br>
-
-               <label for="classement">Classement actuel: </label>
-
-            <select name="classement" id="classement">
-              <option value="">--Please choose an option--</option>
-              <option value="Non Classé">Non Classé</option>
-              <option value="40">40</option>
-              <option value="30/5">30/5</option>
-              <option value="30/4">30/4</option>
-              <option value="30/3">30/3</option>
-              <option value="30/2">30/2</option>
-              <option value="30/1">30/1</option>
-              <option value="30">30</option>
-              <option value="15/5">15/5</option>
-              <option value="15/4">15/4</option>
-              <option value="15/3">15/3</option>
-              <option value="15/2">15/2</option>
-              <option value="15/1">15/1</option>
-              <option value="15">15</option>
-              <option value="5/6">5/6</option>
-              <option value="4/6">4/6</option>
-              <option value="3/6">3/6</option>
-              <option value="2/6">2/6</option>
-              <option value="1/6">1/6</option>
-              <option value="0">0</option>
-              <option value="pro">Semi-pro ou pro</option>
-            </select><br>
-
-                <div>
-                    <label for="d">
-                    <input type="radio" id="d" value="d" name="droitier" checked>Droitier
-                    </label>
-                    <label for="g">
-                    <input type="radio" id="g" value="g" name="droitier">Gaucher
-                    </label>
-                </div>
-                <br>
-                <div>
-                    <label for="unemain">
-                    <input type="radio" id="unemain" value="1" name="revers" checked>Revers à une main
-                    </label>
-                    <label for="deuxmains">
-                    <input type="radio" id="deuxmains" value="2" name="revers">Revers à deux mains
-                    </label>
-                </div>
-
-    <label for="ville">Ville :</label>
-    <input type="text" id="ville" name="ville"><br>
-
-    <label for="birth">Date de naissance :</label>
-    <input type="date" id="birth" name="birth"><br>
-
-    <label for="dispo">Disponibilité :</label>
-    <input type="text" id="dispo" name="dispo"><br>
-
-    <label for="taille">Taille :</label>
-    <input type="text" id="taille" name="taille"><br>
-
-
-    <label for="desc">Description :</label><br>
-    <textarea id="desc" name="desc"></textarea><br>
-
-    <label for="autre">Autre :</label><br>
-    <textarea id="autre" name="autre"></textarea><br>
-
-
-    <button type="submit">S'inscrire</button>
-    <br><br>
-    <button type="button" onclick="to_login()">Déjà inscrit ? Connectez-vous ici</button>
-    <br>
-</form>
-
-
-
-</body>
-</html>
-
-    
-
+      </form>
       <img id="court" src="tennis_court.jpg">
-    
-
-
     
   </div>
   
