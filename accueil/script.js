@@ -16,11 +16,12 @@ async function lancervideo(){
     const title = document.getElementById('title');
     const description = document.getElementById('description');
     const border = document.getElementById('title_border');
-    document.opacity = '0';
+    border.style.opacity = '0';
+    description.style.opacity = '0';
+    title.style.opacity = '0';
+    button.style.opacity = '0';
     video.play();
-    document.location.href="http://localhost:8080/login.html"; 
+    await sleep(2800);
+    window.location.href = "../connexion/signup.php";
 }
 
-function redirectAccueil(){
-    document.location.href="accueil.html"
-}
