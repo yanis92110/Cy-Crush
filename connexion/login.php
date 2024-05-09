@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION = array();
-include "verif.php";
+include "../verif.php";
 
 if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
     $pseudo_login = $_POST['pseudo_login'];
