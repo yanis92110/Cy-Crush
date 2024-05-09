@@ -206,10 +206,14 @@ if (isset($_SESSION['erreur'])) {
     <label for="autre">Autre :</label><br>
     <textarea id="autre" name="autre"></textarea><br>
 
-    <input type="submit" value="Soumettre">
 
     <button type="submit">S'inscrire</button>
+    <br><br>
+    <button type="button" onclick="to_login()">Déjà inscrit ? Connectez-vous ici</button>
+    <br>
 </form>
+
+
 
 </body>
 </html>
