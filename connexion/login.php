@@ -21,16 +21,16 @@ if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
             $_SESSION['mdp'] = $mdp_login;
             $_SESSION['id_user'] = $indice;
             if($list_admin[$indice] === 1){
-                header("Location: menu_admin.php");
+                header("Location: ../menu/menu_admin.php");
                 exit();
             }
             else{
                 if($list_sub[$indice] === 1){
-                    header("Location: menu_user_sub.php");
+                    header("Location: ../menu/menu_user_sub.php");
                     exit();
                 }
                 else{
-                    header("Location: menu_user_nonsub.php");
+                    header("Location: ../menu/menu_user_nonsub.php");
                     exit();
                 }
             }
