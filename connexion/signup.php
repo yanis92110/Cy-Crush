@@ -10,10 +10,10 @@
 <?php
 session_start();
 
-// Vérifier si un message d'erreur est défini dans la variable de session
+
 if (isset($_SESSION['erreur'])) {
     echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-    unset($_SESSION['erreur']); // Supprimer le message d'erreur après l'avoir affiché
+    unset($_SESSION['erreur']);
 }
 ?>
 
