@@ -69,3 +69,32 @@ button:hover {
   position: absolute;
   margin-top: 0;
 }
+
+#creationForm{
+  width: 30%;
+  padding: 3%;
+}
+
+#taille{
+  width:80%;
+}
+
+.rad{
+  text-align:center;
+  display:inline-flex;
+}
+
+.rad2{
+  display:inline-flex;
+  margin:2%;
+}
+
+.check{
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  content:'';
+  width: 1rem;
+  height: 1rem; 
+  border-radius: 1rem;
+}
