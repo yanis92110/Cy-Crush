@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Accueil sub</title>
-    <link rel="stylesheet" href="styleaccueil.css">
+    <link rel="stylesheet" href="stylemanu.css">
 </head>
 <body>
 
