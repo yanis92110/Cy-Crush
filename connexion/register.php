@@ -57,10 +57,14 @@ if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) &
 
         fclose($file1);
         fclose($file2);
-
+        session_destroy();
+        header("Location: login.php");
 }
-if($_POST['pass1'] != $_POST['pass2'])
-    echo('Erreur les mots de passes sont différents');
+if($_POST['pass1'] != $_POST['pass2']){
+    $_SESSION['erreur_mdp_register'] = "Erreur les mots de passes sont différents";
+    header("Location: signup.php");
+    exit();
+}
 
 
 
