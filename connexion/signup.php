@@ -13,8 +13,14 @@ session_start();
 
 if (isset($_SESSION['erreur'])) {
     echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-    unset($_SESSION['erreur']);
+    unset($_SESSION['erreur']); 
 }
+
+if (isset($_SESSION['erreur_mdp_register'])) {
+    echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
+    unset($_SESSION['erreur_mdp_register']); 
+}
+
 ?>
 
   <h1>Formulaire de connexion et de création de compte</h1>
