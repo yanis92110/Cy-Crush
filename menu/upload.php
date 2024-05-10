@@ -16,6 +16,7 @@
         }
 
         if($_FILES['myFile']['error'] == UPLOAD_ERR_OK){
+            
             if($_FILES['myFile']['size'] > 2500000)
                 $error = "Votre fichier est trop lourd";
 
