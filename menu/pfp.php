@@ -30,9 +30,9 @@
         echo "</form>";
 
         if(isset($_POST['pfp']))
-            $_SESSION['pfp'] = '../img/'.$_SESSION['pseudo'].'/'.$_POST['pfp'];
+            $_SESSION['pfp'.$_SESSION['pseudo']] = '../img/'.$_SESSION['pseudo'].'/'.$_POST['pfp'];
             echo "Photo mise en photo de profil avec succès";
-            setcookie('pfp', $_SESSION['pfp'], time() + (86400 * 30), "/");
+            setcookie('pfp'.$_SESSION['pseudo'], $_SESSION['pfp'.$_SESSION['pseudo']], time() + (86400 * 30), "/");
     }
     
     ?>
