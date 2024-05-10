@@ -4,9 +4,11 @@ include "../verif.php";
 
 var_dump($_POST);
 
-if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['sexe']) && isset($_POST['classement']) && isset($_POST['ville']) && isset($_POST['birth'])) {
+if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['sexe']) && isset($_POST['classement']) && isset($_POST['ville']) && isset($_POST['birth']) && isset($_POST['nom']) && isset($_POST['prenom'])) {
     $pseudo = $_POST['pseudo'];
     $date_insc=date("Y-m-d");
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
     $email = $_POST['email'];
     $pass = $_POST['pass1'];
     $sexe=$_POST['sexe'];
@@ -69,7 +71,7 @@ if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) &
         $file1 = fopen("../data/data1.csv", "a");
         $file2 = fopen("../data/data2.csv", "a");
 
-        $user1 = [$pseudo, $pass, $sub, $sexe, $classement, $date_insc, $admin];
+        $user1 = [$pseudo, $pass, $nom, $prenom, $sub, $sexe, $classement, $date_insc, $admin];
 
         $user2 = [$pseudo, $email, $ville, $birth, $dispo, $taille, $droitier, $revers, $desc, $autre];
 
