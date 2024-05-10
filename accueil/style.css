@@ -299,7 +299,34 @@ img {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-/*.ligne{
-  border: 1px solid grey;
-  padding: 20px;
+
+footer{
+  position:fixed;
+  display:inline-block;
+  bottom: 0.5em;;
+  width:600px;
+  border-radius: 50% 20% / 10% 40%;
+  background-color: blanchedalmond;
+  padding: 0.7%;
+}
+
+#a1{
+  color:black;
+}
+
+#pub{
+  border-radius: 30px;
+  width: 400px;
+  height:fit-content;
+  padding: 3%;
+  font-size:large ;
+  line-height: 30px;
+  left: 2px;
+}
+
+#milieu{
+  height: 600px;
+  text-align: left;
+  position:absolute;
+  width: 100%;
 }
