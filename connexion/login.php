@@ -7,12 +7,13 @@ if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
     $pseudo_login = $_POST['pseudo_login'];
     $mdp_login = $_POST['mdp_login'];
     
-    echo"dada :".$pseudo_login;
 
     $list_pseudos = list_data("../data/data1.csv",0);
     $list_mdp = list_data("../data/data1.csv",1);
-    $list_admin = list_data("../data/data1.csv",6);
-    $list_sub = list_data("../data/data1.csv",2);
+    $list_admin = list_data("../data/data1.csv",8);
+    $list_sub = list_data("../data/data1.csv",4);
+
+
 
     foreach ($list_pseudos as $indice => $pseudos){
     if($pseudos === $pseudo_login){
