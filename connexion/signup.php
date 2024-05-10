@@ -32,6 +32,10 @@
 
         <label for="pseudo"><strong>Pseudo :</strong></label> <input type="text" id="pseudo" name="pseudo" required><br>
 
+        <label for="nom"><strong>Nom :</strong></label> <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom"><strong>Prenom :</strong></label> <input type="text" id="prenom" name="prenom" required><br>
+
         <label for="email"><strong>Email :</strong></label> <input type="email" id="email" name="email" required><br>
 
         <label for="pass1"><strong>Mot de passe :</strong></label> <input type="password" id="pass1" name="pass1" required><br>
