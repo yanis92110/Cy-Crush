@@ -16,7 +16,7 @@ if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) &
 
     $classement = $_POST['classement'];
 
-    $droitier = $_POST['droitier'];
+    $droitier = $_POST['mano'];
     $ville=$_POST['ville'];
     $birth=$_POST['birth'];
 
