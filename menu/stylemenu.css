@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
+
 .pfp {
   display: block;
   margin: 0 auto;
@@ -5,3 +8,45 @@
   height: 150px;
   border-radius: 50%;
 }
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid #201e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+.infos_pseudo{
+    font-size: 30px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+hr{
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+hr::after {
+  background: #fff;
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+
+.button_upload , .button_change{
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
