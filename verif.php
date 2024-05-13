@@ -51,4 +51,22 @@ function get_data2($k){
     return $data;
 }
 
+
+
+function mettreAJourDonneesUtilisateur($fichier, $pseudo, $new_data) {
+    $lignes = file($fichier);
+    
+    foreach ($lignes as $index => $ligne) {
+        $champs = explode(',', trim($ligne));
+
+        if ($champs[0] === $pseudo) {
+            $lignes[$index] = implode(',', $new_data) . "\n";
+            break;
+        }
+    }
+    
+    file_put_contents($fichier, implode('', $lignes));
+}
+
 ?>
+
