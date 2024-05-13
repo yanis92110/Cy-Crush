@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Accueil admin</title>
+    <title>Profil</title>
     <link rel="stylesheet" href="stylemenu.css">
 </head>
 <body>
@@ -80,6 +80,8 @@ $data2 = array_slice($data2,1,null,true);
     <button type="button" class=button_upload onclick="redirect_upload()">Uploadez vos propres photos de profils !!</button>
     <br>
      <button type="button" class=button_change onclick="redirect_pfp()">Changer de photo de profil</button>
+     <br>
+     <button type="button" class=button_change onclick="redirect_modif_infos()">Modifier vos infos</button>
 
 <script src="script_upload.js"></script>
 </body>
