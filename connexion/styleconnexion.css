@@ -98,3 +98,40 @@ button:hover {
   height: 1rem; 
   border-radius: 1rem;
 }
+.container{
+  background-color: antiquewhite;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width:1000px;
+  height:600px;
+
+  border-radius: 50% 20% / 10% 40%;
+  background-color: blanchedalmond;
+
+}
+.vignette{
+  display: flex;
+  justify-content: center;
+  margin: 3%;
+  align-items: center;
+  background-color: goldenrod;
+  top: 40%;
+  height: 300px;
+  width: 220px;
+  flex-direction: column;
+  border-radius: 30px;
+  font-size:large ;
+  line-height: 30px;
+  left: 2px;
+}
+.lien{
+  padding:5px;
+}
+
