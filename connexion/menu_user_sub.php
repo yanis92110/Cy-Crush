@@ -7,12 +7,13 @@
 </head>
 <body>
 
-    <nav>
+    <!--<nav>
         <a class="barre" href="/accueil/accueil.html">Accueil</a>
         <a class="barre" href="connexion/profil.html">Mon Profil</a>
         <a class="barre" href="">Rechercher des partenaires</a>
         <a class="barre" href="https://leagueoflegends.com">Nous contacter</a>
     </nav>
+    -->
     <?php
 session_start();
 if(isset($_SESSION['pseudo'])){
@@ -21,16 +22,26 @@ if(isset($_SESSION['pseudo'])){
 
 ?>
     <div class="container">
-    <div class="nadal">
-        <img src="blackcloune.jpg" height="60%" width="60%">
+        <a class="lien" href="../accueil/accueil.html">
+            <div class="vignette">
+                Accueil
+            </div>
+        </a>
+        <a class="lien" href="/profil.html">
+            <div class="vignette">
+                Mon Profil
+            </div>
+        </a>
+        <a class="lien" href="">
+            <div class="vignette">
+                 Rechercher des partenaires
+            </div>
+        </a>
+        <a class="lien" href="https://leagueoflegends.com">
+            <div class="vignette">
+                Nous contacter
+            </div>
+        </a>
     </div>
-    <div class="nadal">
-        caca
-    </div>
-    <div class="nadal">
-        caca
-    </div>
-    </div>
-
 </body>
 </html>
