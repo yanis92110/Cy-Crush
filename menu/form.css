@@ -57,3 +57,26 @@ button:hover {
     background-color: #45a049;
 }
 
+nav{
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center;    /* Centre les éléments verticalement */
+    height: 50px;           /* Ajustez la hauteur du nav si nécessaire */
+}
+
+nav a{
+    height:50px;
+    line-height:33px;
+    padding: 0 10px;
+    transition: .5s;
+    background: #eca562;
+    font-family: Arial, sans-serif;
+}
+nav a:hover{
+    background:#be222200;
+}
+a{
+    width:300px;
+    border: solid black;
+}
+
