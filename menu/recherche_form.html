@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Recherche de partenaires</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <h2>Recherche de partenaires</h2>
+    <div class="form-container">
+        <form id="creationForm" action="register.php" method="POST">
+            <p><strong>Sexe :</strong></p>
+            <div class="rad">
+                <div class="rad2"><label for="sexe">Homme</label> <input type="radio" class="check" name="sexe" value="homme"></div>
+                <div class="rad2"><label for="sexe">Femme</label> <input type="radio" class="check" name="sexe" value="femme"></div>
+            </div><br>
+            <div>
+                <label for="classement"><strong>Classement</strong></label>
+    
+                <select name="classement" id="classement">
+                  <option value="">--Aucune préférence--</option>
+                  <option value="Non Classé">Non Classé</option>
+                  <option value="40">40</option>
+                  <option value="30/5">30/5</option>
+                  <option value="30/4">30/4</option>
+                  <option value="30/3">30/3</option>
+                  <option value="30/2">30/2</option>
+                  <option value="30/1">30/1</option>
+                  <option value="30">30</option>
+                  <option value="15/5">15/5</option>
+                  <option value="15/4">15/4</option>
+                  <option value="15/3">15/3</option>
+                  <option value="15/2">15/2</option>
+                  <option value="15/1">15/1</option>
+                  <option value="15">15</option>
+                  <option value="5/6">5/6</option>
+                  <option value="4/6">4/6</option>
+                  <option value="3/6">3/6</option>
+                  <option value="2/6">2/6</option>
+                  <option value="1/6">1/6</option>
+                  <option value="0">0</option>
+                  <option value="pro">Semi-pro ou pro</option>
+                </select>
+                
+            </div><br><br>
+            <div>
+                <fieldset>
+                    <legend>Caractéristiques tennistiques</legend><br>
+    
+                    <p><strong>Main forte :</strong></p>
+                    <div class="rad">
+                        <div class="rad2"><label for="d">Droite</label><input type="radio" class="check" name="mano" value="d"></div>
+                        <div class="rad2"><label for="g">Gauche</label><input type="radio" class="check" name="mano" value="g"></div>
+                    </div><br>
+    
+                    <p><strong>Type de revers :</strong></p>
+                    <div class="rev">
+                        <div class="rad2"><label for="1" class="lrevers">Revers à une main</label><input type="radio" class="check" name="revers" value="1"></div>
+                        <div class="rad2"><label for="2" class="lrevers">Revers à deux mains</label><input type="radio" class="check" name="revers" value="2"></div>
+                    </div><br>
+    
+                    <div>
+                        <label for="autre"><strong>Autre (Style de jeu, service...) :</strong></label><br> <textarea name="autre"></textarea>
+                    </div><br>
+
+                <button type="submit">Rechercher</button>
+        </form>
+        
+    </div>
+</body>
