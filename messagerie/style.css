@@ -1,0 +1,149 @@
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    position: fixed;
+    right: 95px; 
+    top: 90px;
+}
+
+.conversation-container-css{
+    position: fixed;
+    right: 20px; 
+    bottom: 45%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 700px; 
+    background-color:bisque;
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    visibility: visible;
+}
+
+.hiddenMessageContainer{
+    position: fixed;
+    right: 20px; 
+    bottom: 45%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 700px; 
+    background-color:bisque;
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.conversation{
+    border: 2px solid black;
+    color: black;
+    border-radius: 10%;
+    height: 18%;
+    width: 95%;
+    margin: 10px;
+    margin-top: 10px;
+    padding-top: 5%;
+    text-align:center;
+}
+
+.messages-container-css{
+    position: fixed;
+    left: 20px; 
+    bottom: 48.8%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 620px; 
+    background-color:bisque;
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 2.5;
+}
+
+.messageShown{
+    position: fixed;
+    right: 20px; 
+    bottom: 45%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 700px; 
+    background-color:bisque;
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    visibility: visible;
+}
+
+#messageStyle{
+    position: fixed;
+    left: 20px; 
+    top: 12.5%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 22px; 
+    background-color:bisque;
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color:rgb(94, 94, 170);
+    padding: 5px;
+}
+
+#exit{
+    color: black;
+    background-color: red;
+}
+
+#chat{
+    position: fixed;
+    left: 20px; 
+    bottom: 16.8%; 
+    transform: translateY(50%);
+    width: 25%; 
+    height: 22px; 
+    background-color:rgb(94, 94, 170);
+    border: 2px dashed black;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#response{
+    width: 80%;
+}
+
+#send{
+    width: 16.1%;
+    color: black;
+    background-color: bisque;
+    border: 2px solid black;
+}
+
+.conversation:hover{color: rgb(94, 94, 170);}
