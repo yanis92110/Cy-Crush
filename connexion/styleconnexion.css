@@ -35,6 +35,9 @@ h2 {
   font-family: FunnySports;
   font-weight: lighter;
 }
+textarea{
+    resize:none;
+}
 
 label {
   display: block;
