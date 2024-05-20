@@ -1,0 +1,107 @@
+@font-face { font-family: Sport; src: url('Sport.ttf'); } 
+@font-face { font-family: FunnySports; src: url('FunnySports.ttf'); } 
+body {
+ font-family: Arial, sans-serif;
+ background-color: #fefdd7;
+ text-align: center;
+ padding: 20px;
+}
+
+h1 {
+ color: #333;
+ font-family: FunnySports;
+ font-weight: lighter;
+}
+
+h2 {
+ display: inline-block;
+ color: #333;
+ font-family: FunnySports;
+ font-weight: lighter;
+}
+
+
+
+button {
+ width: 100%;
+ padding: 10px;
+ background-color: #4caf50;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+button:hover {
+ background-color: #45a049;
+}
+
+#court{
+ width: 1000px;
+ z-index: -1;
+ position: absolute;
+ margin-top: 0;
+}
+
+.container{
+ background-color: antiquewhite;
+ display:inline-flex;
+ align-items: center;
+ justify-content: center;
+ 
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ 
+ width:1000px;
+ height:600px;
+
+ border-radius: 50% 20% / 10% 40%;
+ background-color: blanchedalmond;
+
+}
+.vignette{
+ display: flex;
+ 
+ margin: 3%;
+ align-items: center;
+ background-color: goldenrod;
+ top: 40%;
+ height: 330px;
+ width: 250px;
+ flex-direction: column;
+ border-radius: 30px;
+ font-size:large ;
+ line-height: 30px;
+ left: 2px;
+}
+
+nav a{
+ float:left;
+ height:50px;
+ line-height:33px;
+ padding: 0 10px;
+ transition: .5s;
+ background: #ec6262;
+ font-family: Arial, sans-serif;
+}
+nav a:hover{
+ background:#be222200;
+}
+
+a{
+ width:300px;
+ border: solid black;
+}
+.inscription{
+    margin-bottom: 20px;
+    width: 120px;
+    background-color: #45a049;
+    color:#333;
+}
+p{
+    margin:10px;
+    justify-content: center;
+}
+
