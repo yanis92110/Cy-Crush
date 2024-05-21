@@ -8,36 +8,20 @@
     </head>
     <body>
 
-        <?php
-            session_start();
-
-
-            if (isset($_SESSION['erreur'])) {
-                echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-                unset($_SESSION['erreur']); 
-            }
-
-            if (isset($_SESSION['erreur_mdp_register'])) {
-                echo "<p style='color: red;'>".$_SESSION['erreur']."</p>";
-                unset($_SESSION['erreur_mdp_register']); 
-            }
-
-        ?>
-
         <h1>MESSAGERIE</h1>
 
         <div id="conversation-container" class="conversation-container-css">
         </div>
 
         <div id="messageStyle">
-            <button id="exit">X</button>
+            <button id="exit" onclick="sortirConv()">X</button>
         </div>
         <div id="messages-container" class="messages-container-css">
         </div>
-        <form id="chat" action="chat.php" method="post">
-                <input type="text" name="chat" id="response" placeholder="Tapez...">
-                <input type="submit" id="send" value="Envoyer"> 
-        </form>
+        <div id="chat">
+                <input type="text" name="chat" id="response" placeholder="Tapez..." onfocus="clearContent(this)">
+                <button id="send" onclick="envoyer_message()"> Envoyer </button>
+        </div>
 
         <script src="script.js"></script>
     </body>
