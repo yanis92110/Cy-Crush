@@ -54,19 +54,21 @@ button:hover {
  left: 50%;
  transform: translate(-50%, -50%);
  
- width:1000px;
+ width:1300px;
  height:600px;
 
  border-radius: 50% 20% / 10% 40%;
  background-color: blanchedalmond;
+ 
 
 }
+
 .vignette{
  display: flex;
  
  margin: 3%;
  align-items: center;
- background-color: goldenrod;
+ background-color: rgb(62, 151, 203);
  top: 40%;
  height: 330px;
  width: 250px;
@@ -75,7 +77,37 @@ button:hover {
  font-size:large ;
  line-height: 30px;
  left: 2px;
+ border: 2px dashed black;
+ transition: border 0.5s;
+
 }
+
+@keyframes rotate-border {
+    0% {
+        border-style: dashed;
+        border-width: 5px;
+    }
+    25% {
+        border-style: dotted;
+        border-width: 5px;
+    }
+    50% {
+        border-style: solid;
+        border-width: 5px;
+    }
+    75% {
+        border-style: double;
+        border-width: 5px;
+    }
+    100% {
+        border-style: dashed;
+        border-width: 5px;
+    }
+}
+.vignette[border]:hover{
+    animation: rotate-border 1s infinite;
+}
+
 
 nav a{
  float:left;
@@ -95,10 +127,14 @@ a{
  border: solid black;
 }
 .inscription{
+    position: fixed;
+    bottom: 23%;
     margin-bottom: 20px;
     width: 120px;
     background-color: #45a049;
     color:#333;
+    font-weight: bold;
+    border: solid black 1px;
 }
 p{
     margin:10px;
