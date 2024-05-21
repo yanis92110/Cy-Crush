@@ -1,32 +1,18 @@
 <?php
-    session_start();
 
-    if (isset($_POST['conversationID']) && isset($_POST['message'])) {
-        $convID = $_POST['conversationID'];
-        $message = $_POST['message'];
-        //$pseudo = $_SESSION['pseudo'];
-        $date = date('d-m-Y H:i:s');
+if (isset($_POST['convID']) && isset($_POST['message'])) {
+    $convID = $_POST['convID'];
+
+    $id = uniqid();
+    $pseudo = 'Ivern';
+    $message = $_POST['message'];
+    $date = date("d-m-Y H:i:s"); 
+
+    $data = [$id, $pseudo, $message, $date];
+
+    $line = PHP_EOL . $data[0] . ";" . $data[1] . ";" . $data[2] . ";" . $data[3];
     
-
-        
-        $file = "messages/messages_" . $convID . ".csv";
-
-            
-        if (!file_exists($file)) {
-            $file = fopen($file, 'w');
-            fclose($file);
-        }
-
-        
-        $file1 = fopen($file, "a");
-
-        
-        $data = ['Ivern', $message, $date];
-        fputcsv($file1, $data);
-
-        
-        fclose($file1);
-    }
-    
-
-    session_destroy();
+    file_put_contents("../messages/messages_" . $convID . ".csv", $line, FILE_APPEND);
+} else {
+    echo "Il manque des données...";
+}
