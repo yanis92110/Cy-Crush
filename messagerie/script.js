@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     loadConversations();
 });
 
+var currentConv = 0;
+console.log(currentConv);
+
 function loadConversations() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "conversations.csv", true);
@@ -17,7 +20,7 @@ function loadConversations() {
 function loadUsersData(conversationsData) {
     var usersData = ""; 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../data/data1.csv", true);
+    xhr.open("GET", "/data/data1.csv", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             usersData = xhr.responseText;
@@ -28,22 +31,16 @@ function loadUsersData(conversationsData) {
     xhr.send();
 }
 
-function loadMessages(conversationID) {
-    
-    var xhr = new XMLHttpRequest();
-    
-    xhr.open("GET", "/messages/messages_" + conversationID + ".csv", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var messagesData = xhr.responseText;
-            displayMessages(messagesData);
-        }
-    };
-    xhr.send();
-}
-
 function displayMessages(messagesData) {
     
+    var messageContainer = document.getElementById('messages-container');
+    var barreExit = document.getElementById('messageStyle');
+    var barreMessage = document.getElementById('chat');
+
+    messageContainer.style.visibility = "visible";
+    barreExit.style.visibility = "visible";
+    barreMessage.style.visibility = "visible";
+
     var messagesRows = messagesData.split("\n");
 
     
@@ -52,10 +49,11 @@ function displayMessages(messagesData) {
 
     
     for (var i = 1; i < messagesRows.length; i++) {
-        var messageData = messagesRows[i].split(",");
-        var user = messageData[0];
-        var message = messageData[1];
-        var messageDate = messageData[2];
+        var messageData = messagesRows[i].split(";");
+        var messageID = messageData[0]
+        var user = messageData[1];
+        var message = messageData[2];
+        var messageDate = messageData[3];
 
         
         var messageDiv = document.createElement("div");
@@ -89,7 +87,6 @@ function displayConversationsWithData(conversationsData, usersData) {
             var conversationID = rowData[0];
             var user1Pseudo = rowData[1];
             var user2Pseudo = rowData[2];
-            var lastMessageDate = rowData[3];
 
             
             var conversationDiv = document.createElement("div");
@@ -98,11 +95,12 @@ function displayConversationsWithData(conversationsData, usersData) {
             //var profilMessage = document.createElement("div");
             //profilMessage.classList.add("profilMessage");
 
-            conversationDiv.innerHTML = "<strong>" + user1Pseudo + "</strong> et <strong>" + user2Pseudo + "</strong> - Dernier message le " + lastMessageDate;
+            conversationDiv.innerHTML = "<strong>" + user1Pseudo + "</strong> et <strong>" + user2Pseudo + "</strong>";
 
             conversationDiv.onclick = function(){
                 var xhr = new XMLHttpRequest();
-               
+                currentConv = conversationID;
+                console.log(currentConv);
                 xhr.open("GET", "/messages/messages_" + conversationID + ".csv", true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -120,23 +118,50 @@ function displayConversationsWithData(conversationsData, usersData) {
     }
 }
 
-document.getElementById('send').addEventListener('submit',function(event){
-    event.preventDefault();
+function envoyer_message(){
+    
+    // récupérer le message à envoyer
+    var message = document.getElementById('response').value;
 
-    var message = encodeURIComponent(document.getElementById('response'));
-    var conversationID = encodeURIComponent(conversationID);
-
-    var xhr = new XMLHttpRequest();
-    var url = "chat.php";
-    var params = "conversationID=" + conversationID + "&message=" + message;
-
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log('tout va bien');
+    // écrire le message dans le .csv
+    var xhr2 = new XMLHttpRequest();
+    xhr2.open("POST" , "chat.php" , true);
+    xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr2.onreadystatechange = function() {
+        if(xhr2.readyState == 4 && xhr2.status == 200){
+            console.log('Al Hamdoulilah tout se passe bien');
         }
     };
-    
-    xhr.send(params);
-})
+    xhr2.send("message=" + encodeURIComponent(message) + "&convID=" + encodeURIComponent(currentConv));
+
+    message ="";
+
+    // re-display les messages de la conv
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/messages/messages_" + currentConv + ".csv", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var messagesData = xhr.responseText;
+            displayMessages(messagesData);
+    }
+    };
+    xhr.send();
+}
+
+function sortirConv(){
+    currentConv = 0;
+    console.log(currentConv);
+
+    //fermer la fenetre de la conv
+    var messageContainer = document.getElementById('messages-container');
+    var barreExit = document.getElementById('messageStyle');
+    var barreMessage = document.getElementById('chat');
+
+    messageContainer.style.visibility = "hidden";
+    barreExit.style.visibility = "hidden";
+    barreMessage.style.visibility = "hidden";
+}
+
+function clearContent(x){
+    x.value="";
+}
