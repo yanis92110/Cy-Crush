@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", function() {
     loadConversations();
 });
 
+document.addEventListener('click', function(event) {
+    
+    let targetElement = event.target;
+    if (!targetElement.classList.contains('message')) {
+        document.getElementById('delete_report').style.visibility = 'hidden';
+    }
+
+});
+
+
 var currentConv = 0;
 console.log(currentConv);
 
@@ -60,7 +70,18 @@ function displayMessages(messagesData) {
         messageDiv.classList.add("message");
         messageDiv.innerHTML = "<strong>" + user + "</strong>: " + message+"\n";
 
-        
+        messageDiv.onclick = function(event){
+            
+            const deleteDiv = document.getElementById('delete_report');
+            const x = event.clientX;
+            const y = event.clientY;
+
+            deleteDiv.style.left = `${x}px`;
+            deleteDiv.style.top = `${y}px`;
+
+            deleteDiv.style.visibility = "visible";
+        };
+
         messagesContainer.appendChild(messageDiv);
     }
 }
