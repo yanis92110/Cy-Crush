@@ -1,3 +1,19 @@
+<?php
+// Lire le fichier CSV
+$profiles = [];
+if (($handle = fopen("../data/data2.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $profiles[] = $data;
+    }
+    fclose($handle);
+}
+
+// Extraire les dix derniers profils
+$last_ten_profiles = array_slice($profiles, -10);
+
+// Convertir en JSON
+$json_profiles = json_encode($last_ten_profiles);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +22,7 @@
         <link rel="stylesheet" href="menu.css">
     </head>
     <body>
+        
 
         <div class="global">
             <div class="button-container">
@@ -35,9 +52,37 @@
                 </svg>
                 </button>
 
+                <button class="button" id="logoutBtn">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                </svg>
+                </button>
+
             </div>
         </div>
+        <div id="profilContainer">
+            test
+        </div>
+        <script type="text/javascript">
+        // Injecter les données JSON dans le script
+        var profiles = <?php echo $json_profiles; ?>;
+        
+        // Sélectionner la div existante
+        var profilesDiv = document.getElementById('profilContainer');
+        
+        // Créer et ajouter les nouvelles div avec les informations de chaque profil
+        /*profiles.forEach(function(profile) {
+            var profileDiv = document.createElement("div");
+            profileDiv.className="vignette";
+            profileDiv.textContent = 'Pseudo: ' + profiles[1][0];
+            profilesDiv.appendChild(profileDiv);
+        });
+        */
+        var profileDiv = document.createElement("div");
+        profileDiv.className="vignette";
+        profileDiv.textContent="caca" + profiles[1][0];
+        profilesDiv.appendChild(profileDiv);
+    </script>
 
-        <script src="script_upload.js"></script>
     </body>
 </html>
