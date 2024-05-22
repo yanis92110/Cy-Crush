@@ -82,6 +82,17 @@ h1{
     visibility: hidden;
 }
 
+.message{
+    margin-bottom: 1.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.message:hover{
+    background-color: rgb(201, 198, 198);
+    border: 1px dashed black;
+}
+
 #chat{
     position: fixed;
     right: 20px; 
@@ -118,3 +129,107 @@ h1{
 }
 
 .conversation:hover{color: rgb(94, 94, 170);}
+
+
+#delete_report{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    background-color: bisque;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px dashed black;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+.btn {
+    position: fixed;
+    background-color: transparent;
+    position: relative;
+    border: none;
+    margin: 2%;
+}
+
+.btn2{
+    position: fixed;
+    background-color: transparent;
+    position: relative;
+    border: none;
+    font-size: larger;
+    margin: 2%;
+}
+
+.btn::after {
+    content: 'delete';
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(168, 7, 7);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .2s linear;
+    transition-delay: .2s;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn2::after {
+    content: 'report';
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(168, 7, 7);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .2s linear;
+    transition-delay: .2s;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon {
+    transform: scale(1.2);
+    transition: .2s linear;
+    
+}
+
+.btn:hover > .icon {
+    transform: scale(1.5);
+}
+
+.btn:hover > .icon path {
+    fill: rgb(168, 7, 7);
+}
+
+.btn:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+}
+
+.btn2:hover {
+    transform: scale(1.5);
+    color: rgb(168, 7, 7);
+}
+
+.btn2:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+}
