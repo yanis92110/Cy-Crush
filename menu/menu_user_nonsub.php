@@ -1,25 +1,36 @@
 <?php
 // Lire le fichier CSV
-$profiles = [];
+$data2 = [];
+//On parcours pour data2
 if (($handle = fopen("../data/data2.csv", "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $profiles[] = $data;
+    while (($csv = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $data2[] = $csv;
     }
     fclose($handle);
 }
+$data1 = [];
 
+//On parcours pour data1
+if (($handle = fopen("../data/data1.csv", "r")) !== FALSE) {
+    while (($csv = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $data1[] = $csv;
+    }
+    fclose($handle);
+}
 // Extraire les dix derniers profils
-$last_ten_profiles = array_slice($profiles, -10);
-
+$last_ten_profiles = array_slice($data2, -10);
 // Convertir en JSON
-$json_profiles = json_encode($last_ten_profiles);
+$json_data2 = json_encode($last_ten_profiles);
+//Pareil pour data1
+$last_ten_profiles = array_slice($data1, -10);
+$json_data1 = json_encode($last_ten_profiles);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Accueil sub</title>
-        <link rel="stylesheet" href="menu.css">
+        <link rel="stylesheet" href="derniersprofils.css">
     </head>
     <body>
         
@@ -61,27 +72,26 @@ $json_profiles = json_encode($last_ten_profiles);
             </div>
         </div>
         <div id="profilContainer">
-            test
         </div>
         <script type="text/javascript">
         // Injecter les données JSON dans le script
-        var profiles = <?php echo $json_profiles; ?>;
-        
+        var profilesdata2 = <?php echo $json_data2; ?>;
+        var profilesdata1 = <?php echo $json_data1; ?>;
         // Sélectionner la div existante
         var profilesDiv = document.getElementById('profilContainer');
-        
+        var i=1;
         // Créer et ajouter les nouvelles div avec les informations de chaque profil
-        /*profiles.forEach(function(profile) {
+        profilesdata2.forEach(function(profile) {
+            //profilesDiv.innerHTML = "<br>";
             var profileDiv = document.createElement("div");
             profileDiv.className="vignette";
-            profileDiv.textContent = 'Pseudo: ' + profiles[1][0];
+            // A FAIRE PR LA PFP
+            //var pfp=
+            //profileDiv.innerHTML = "<img src="" "
+            profileDiv.innerHTML = 'Pseudo: ' + profilesdata2[i][0] + '<br>' + "Sexe: " + profilesdata1[i][5] + "<br> Classement: " + profilesdata1[i][6] + '<div> Taille: ' + profilesdata2[i][5] + "<br>" + "Main forte: " + profilesdata2[i][6] + "<br>" + "Revers: " + profilesdata2[i][7] + "mains <br>";
             profilesDiv.appendChild(profileDiv);
+            i=i+1;
         });
-        */
-        var profileDiv = document.createElement("div");
-        profileDiv.className="vignette";
-        profileDiv.textContent="caca" + profiles[1][0];
-        profilesDiv.appendChild(profileDiv);
     </script>
 
     </body>
