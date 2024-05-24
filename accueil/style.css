@@ -308,6 +308,7 @@ footer{
   border-radius: 50% 20% / 10% 40%;
   background-color: blanchedalmond;
   padding: 0.7%;
+  border: dashed 3px black;
 }
 
 #a1{

@@ -82,7 +82,7 @@
                 <legend>Caractéristiques tennistiques</legend><br>
                 
                 <div>
-                    <label for="taille"><strong>Taille :</strong></label> <input type="text" name="taille" id="taille" class="taille">
+                    <label for="taille"><strong>Taille :</strong></label> <input type="text" id="taille">
                 </div>
 
                 <p><strong>Main forte :</strong></p>

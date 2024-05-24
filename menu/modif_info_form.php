@@ -160,7 +160,7 @@
 
             </fieldset>
         </div><br><br>
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Valider</button>
       </form>
       <img id="court" src="tennis_court.jpg">
     

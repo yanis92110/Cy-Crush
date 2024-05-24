@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 include "../verif.php";
 
@@ -89,4 +88,7 @@ if($_POST['pass1'] != $_POST['pass2']){
     header("Location: signup.php");
     exit();
 }
-ob_end_flush();
+
+
+
+

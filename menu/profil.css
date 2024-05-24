@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
+body{
+  background-color: rgb(247, 212, 166);
+}
 
 .pfp {
   display: block;
@@ -10,12 +13,17 @@
 }
 
 .container{
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    border: 1px solid #201e1e;
+    width: 800px;
+    border: 2px dashed black;
     padding: 20px;
     text-align: center;
+    background-color: bisque;
+    top: 10%;
+    left: 15%;
+    margin-bottom: 5%;
 }
 
 .infos_pseudo{
@@ -40,13 +48,25 @@ hr::after {
 }
 
 .button_upload , .button_change{
-  width: 100%;
+  position: absolute;
+  width: 35%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: rgb(94, 94, 170);
   color: #fff;
   border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
+  left: 19.6%;
 }
 
+#btn_upload{
+  top: 130%;
+}
 
+#btn_load{
+  top: 134%;
+}
+
+#btn_edit{
+  top: 138%;
+}

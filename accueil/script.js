@@ -17,10 +17,7 @@ async function lancervideo(){
     const description = document.getElementById('description');
     const border = document.getElementById('title_border');
     document.opacity = '0';
+    sleep(3500);
     video.play();
     document.location.href="http://localhost:8080/connexion/signup.php"; 
-}
-
-function redirectAccueil(){
-    document.location.href="accueil.html"
 }

@@ -1,13 +1,17 @@
+body{
+    background-color: rgb(247, 212, 166);
+}
+
 .global{
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100px;
+    height: 100vh;
 }
 
 .button-container {
-    position: fixed; 
-    top: 15px; 
+    position: fixed;
+    top: 20px; 
     left: 50%; 
     transform: translateX(-50%); 
     display: flex;
@@ -19,6 +23,7 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
     bisque 5px 10px 15px;
+    z-index: 1000;
 }
 
 .button {
@@ -43,36 +48,96 @@
 .icon {
     font-size: 20px;
 }
-#profilContainer{
-    background-color: antiquewhite;
-    display:inline-flex;
-    align-items: center;
-    justify-content: center;
-  
+
+#derniers_inscrits{
+    top: 80px;
+    left: 20px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    width:1000px;
-    height:600px;
+    height: 900px;
+    width: 65%;
+    margin: 1%;
+    display:inline-flex;
+}
+
+#creationForm{
+    position: fixed;
+    left: 20px;
+    align-items: center;
+    border: 2px dashed black;
+    top: 30%;
+    width: 200px;
+    height: 270px;
+    background-color: bisque;
+    font-size: large;
+}
+
+.rad{
+    text-align:center;
+    display:inline-flex;
+    margin-left: 10%;
+}
   
-    border-radius: 50% 20% / 10% 40%;
-    background-color: blanchedalmond;
-  
-  }
-  .vignette{
+.rad2{
+    display:inline-flex;
+    margin:2%;
+}
+
+.title{
+    text-align: center;
+}
+
+#classement{
+    margin-left: 10%;
+}
+
+#searchBtn{
+    margin-left: 27%;
+}
+
+#find{
+    top: 80px;
+    left: 12%;
+    position: absolute;
+    height: 900px;
+    width: 58%;
+    margin: 1%;
+    display:inline-flex;
+}
+
+.vignette{
     display: flex;
     justify-content: center;
-    margin: 3%;
+    margin: 3px;
     align-items: center;
     background-color: goldenrod;
     top: 40%;
-    height: 300px;
-    width: 220px;
+    height: 400px;
+    width: 250px;
     flex-direction: column;
     border-radius: 30px;
     font-size:large ;
     line-height: 30px;
     left: 2px;
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur et la hauteur */
+}
+
+#profilContainer{
+    
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    
+    width:900px;
+    height:1500px;
+  
+    border-radius: 80px;
+
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes */
+    gap: 20px; /* Espace entre les éléments */
+  
   }

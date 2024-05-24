@@ -1,3 +1,8 @@
-Pseudo,Message,Date
-Ivern,Salut ça va ?,10-05-2024 11:00:00
-Maude,Bien et toi mon chou ?,10-05-2024 12:00:00
+ID;Pseudo;Message;Date
+1;Ivern;Salut ça va ?;10-05-2024 11:00:00
+2;Maude;Bien et toi mon chou ?;10-05-2024 12:00:00
+664cfa3c668bf;Ivern;Bien merci !;21-05-2024 19:47:08
+664cfa78e6cc4;Ivern;D'ailleurs, as tu mangé tes cramptés ce matin ?;21-05-2024 19:48:08
+664f5c4332a08;Ivern;Mais naaaan jure tu traines avec Jade !;23-05-2024 15:09:55
+664f6c2275318;Ivern;test;23-05-2024 16:17:38
+664f7e41a8826;Ivern;azerzer;23-05-2024 17:34:57

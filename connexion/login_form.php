@@ -1,5 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="styleconnexion.css">
+</head>
+<body>
+
 <?php
-ob_start();
 session_start();
 
 
@@ -11,16 +19,9 @@ if (isset($_SESSION['erreur_mdp'])) {
     echo "<p style='color: red;'>".$_SESSION['erreur_mdp']."</p>";
     unset($_SESSION['erreur_mdp']); 
 }
-ob_end_flush();
+
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="styleconnexion.css">
-</head>
-<body>
+
 
   <h1>Formulaire de connexion</h1>
 
