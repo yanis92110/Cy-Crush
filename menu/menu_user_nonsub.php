@@ -1,3 +1,35 @@
+<?php
+// Lire le fichier CSV
+$data2 = [];
+//On parcours pour data2
+if (($handle = fopen("../data/data2.csv", "r")) !== FALSE) {
+    while (($csv = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $data2[] = $csv;
+    }
+    fclose($handle);
+}
+$data1 = [];
+
+//On parcours pour data1
+if (($handle = fopen("../data/data1.csv", "r")) !== FALSE) {
+    while (($csv = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $data1[] = $csv;
+    }
+    fclose($handle);
+}
+// Extraire les dix derniers profils
+$last_ten_profiles = array_slice($data2, -10);
+// Convertir en JSON
+$json_data2 = json_encode($last_ten_profiles);
+//Pareil pour data1
+$last_ten_profiles = array_slice($data1, -10);
+$json_data1 = json_encode($last_ten_profiles);
+ob_start();
+session_start();
+include "../verif.php";
+$pseudo=$_SESSION["pseudo"];
+$pseudo=json_encode($pseudo);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,13 +39,7 @@
         <link rel="stylesheet" type="text/css" href="/messagerie/base/style.css">
     </head>
     <body>
-
-        <?php 
-            $profiles = [];
-
-
-        ?>
-
+        
         <div class="global">
             <div class="button-container">
                 <button class="button" onclick="redirect_home()">
@@ -41,7 +67,15 @@
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
                 </button>
+                
+                <button class="button" id="logoutBtn">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                </svg>
+                </button>
 
+            </div>
+            <div id="profilContainer">
             </div>
 
             <fieldset id="derniers_inscrits">
@@ -77,5 +111,32 @@
 
         <script src="/messagerie/base/script.js"></script>
         <script src="script_upload.js"></script>
+        <script type="text/javascript">
+            // Injecter les données JSON dans le script
+        var profilesdata2 = <?php echo $json_data2; ?>;
+        var profilesdata1 = <?php echo $json_data1; ?>;
+        var pseudo = <?php echo $pseudo;?>;
+        // Sélectionner la div existante
+        var profilesDiv = document.getElementById('profilContainer');
+        var i=1;
+        // Créer et ajouter les nouvelles div avec les informations de chaque profil
+        profilesdata2.forEach(function(profile) {
+            //profilesDiv.innerHTML = "<br>";
+            if(profilesdata2[i][0]!=pseudo){
+                //Ne pas afficher son profil
+                var profileDiv = document.createElement("div");
+                profileDiv.className="vignette";
+                // A FAIRE PR LA PFP
+                //var pfp=
+                //profileDiv.innerHTML = "<img src="" "
+                profileDiv.innerHTML = 'Pseudo: ' + profilesdata2[i][0] + '<br>' + "Sexe: " + profilesdata1[i][5] + "<br> Classement: " + profilesdata1[i][6] + '<div> Taille: ' + profilesdata2[i][5] + "<br>" + "Main forte: " + profilesdata2[i][6] + "<br>" + "Revers: " + profilesdata2[i][7] + "mains <br>";
+                profilesDiv.appendChild(profileDiv);
+                i=i+1;
+            };
+        });
+        </script>
     </body>
 </html>
+<?php
+ob_end_flush();
+?>
