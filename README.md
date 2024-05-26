@@ -10,7 +10,7 @@ Le but de ce projet est de réaliser un site de rencontre permettant à des util
 Nous avons choisi comme thème le sport, en créant le premier site qui facilite la rencontre de tennisman/woman afin de trouver le partenaire de jeu idéal et de s'éléver au rang des plus grands joueurs, peut-être jouerez vous un jour avec eux (voir modalités de l'abonnement sub).
 
 ## Cahier des Charges
-###Interface Web
+### Interface Web
 L'interface sera divisée en plusieurs modules :
 
 ### Visiteur
