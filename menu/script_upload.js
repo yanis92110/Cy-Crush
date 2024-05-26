@@ -38,8 +38,6 @@ document.addEventListener("load",function(){
     afficher10DerniersInscrits();
 });
 
-
-
-function updateSub(){
-
+function redirect_Sub(){
+    window.location.href="../menu/paiement.php";
 }
