@@ -3,13 +3,11 @@
     session_start();
     include "../verif.php";
     if(isset($_GET["p"])){
-        //echo "rentré dans le p";
         $pseudo=$_GET["p"];
         $list_pseudos = list_data("../data/data1.csv",0);
         $indice=1;
         foreach ($list_pseudos as $pseudos){
             if($pseudos === $pseudo){
-                //echo "pseudo trouvé";
                 break;
             }
             $indice=$indice+1;
@@ -25,7 +23,6 @@
         $indice = intval($_GET["i"]);
         $data1 = get_data1($indice);
         $data2 = get_data2($indice);
-
         $data2 = array_slice($data2,1,null,true);
     }
 ?>
