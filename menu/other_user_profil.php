@@ -28,7 +28,7 @@
     <title>Profil</title>
     <link rel="stylesheet" type="text/css" href="profil.css">
     <link rel="stylesheet" type="text/css" href="menu.css">
-    <link rel="stylesheet" type="text/css" href="/messagerie/style.css">
+    <link rel="stylesheet" type="text/css" href="/messagerie/base/style.css">
 </head>
 <body>
     <h2 id="logo"> CY Roland </h2>
