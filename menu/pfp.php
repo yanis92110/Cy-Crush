@@ -39,7 +39,7 @@
 
     <br><br>
 
-    <button type="button" class="button_upload" onclick="redirect_profile()">Revenir sur votre profil</button>
+    <button type="button" class="button_upload" onclick="redirect_profil()">Revenir sur votre profil</button>
 
 
 <script src="script_upload.js"></script>
