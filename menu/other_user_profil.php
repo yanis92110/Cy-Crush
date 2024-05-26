@@ -146,16 +146,7 @@
             <button class="btn2 icon">
             !
             </button>
-        </div>
 
-        
-        <button type="button" class=button_upload id="btn_upload" onclick="redirect_upload()">Uploadez vos propres photos de profils !!</button>
-        <br>
-        <button type="button" class=button_change id="btn_load" onclick="redirect_pfp()">Changer de photo de profil</button>
-        <br>
-        <button type="button" class=button_change id="btn_edit" onclick="redirect_modif_infos()">Modifier vos infos</button>
-    
-    </div>
 
 <script src="script_upload.js"></script>
 </body>
