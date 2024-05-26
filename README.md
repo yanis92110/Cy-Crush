@@ -13,7 +13,7 @@ Nous avons choisi comme thème le sport, en créant le premier site qui facilite
 ###Interface Web
 L'interface sera divisée en plusieurs modules :
 
-###Visiteur
+### Visiteur
 Accès limité, possibilité de voir une page de publicité et des photos d'utilisateurs sans accès aux profils.
 ### Utilisateur
 Possibilité de s'inscrire, créer et modifier son profil, consulter les profils des autres utilisateurs, et voir les offres d'abonnement.
