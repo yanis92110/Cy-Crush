@@ -68,5 +68,21 @@ function mettreAJourDonneesUtilisateur($fichier, $pseudo, $new_data) {
     file_put_contents($fichier, implode('', $lignes));
 }
 
+function find_user_indice($pseudo) {
+$file = fopen("../data/data1.csv", "r");
+    if ($file !== FALSE) {
+        $indice = 0;
+        while (($data = fgetcsv($file, 1000, ",")) !== FALSE) {
+            if ($data[0] == $pseudo) {
+                fclose($file);
+                return $indice + 1;
+            }
+            $indice++;
+        }
+        fclose($file);
+    }
+    return false;
+}
+
 ?>
 
