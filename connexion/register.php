@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include "../verif.php";
 
@@ -67,16 +68,6 @@ if(isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['pass1']) &
             exit();
         }
     }
-        if (!is_dir('../img/' . $pseudo)) {
-            mkdir('../img/' . $pseudo, 0777);
-        }
-        if (!file_exists('../messagerie/conversations/conv'.$pseudo.'.csv')) {
-            $file_conv = fopen('../messagerie/conversations/conv'.$pseudo.'.csv', 'w');
-            if($file === FALSE)
-                echo"le fichier de conversation n'a pas pu être creer";
-            else
-                fclose($file);
-        }
 
         $file1 = fopen("../data/data1.csv", "a");
         $file2 = fopen("../data/data2.csv", "a");
@@ -98,7 +89,4 @@ if($_POST['pass1'] != $_POST['pass2']){
     header("Location: signup.php");
     exit();
 }
-
-
-
-
+ob_end_flush();
