@@ -12,8 +12,15 @@ if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
     $list_mdp = list_data("../data/data1.csv",1);
     $list_admin = list_data("../data/data1.csv",8);
     $list_sub = list_data("../data/data1.csv",4);
+    $list_email = list_data("../data/ban.csv",0);
 
-
+    foreach($list_email as $email){
+        if($email === $list_email){
+            $_SESSION['erreur_email']="Vous êtes banni ! ";
+            header("Location: login_form.php");
+            exit();
+        }
+    }
 
     foreach ($list_pseudos as $indice => $pseudos){
     if($pseudos === $pseudo_login){
