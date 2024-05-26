@@ -94,11 +94,8 @@ $pseudo=json_encode($pseudo);
                 var profileDiv = document.createElement("div");
                 profileDiv.className="vignette";
                 profileDiv.innerHTML = 'Pseudo: ' + profile[0] + '<br>' + "Sexe: " + profile[5] + "<br> Classement: " + profile[6];
-                var index=i;
-
-
                 profileDiv.onclick=function(){
-                    var url="other_user_profil.php?i=" + encodeURIComponent(index);
+                    var url="other_user_profil.php?p=" + encodeURIComponent(profile[0]);
                     window.location.href=url;
                 };
                     
