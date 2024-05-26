@@ -53,15 +53,12 @@ $data2 = array_slice($data2,1,null,true);
     
         <div class="container">
             <?php
-            if(isset($_SESSION['pfp'.$_SESSION['pseudo']]))
-                echo "<img class='pfp' src='{$_SESSION['pfp'.$_SESSION['pseudo']]}' alt='Photo de profil'>";
-            else if (isset($_COOKIE['pfp'.$_SESSION['pseudo']])){
-                $_SESSION['pfp'.$_SESSION['pseudo']] = $_COOKIE['pfp'.$_SESSION['pseudo']];
-                echo "<img class='pfp' src='{$_SESSION['pfp'.$_SESSION['pseudo']]}' alt='Photo de profil'>";
-            }
+            $dir = "../img/".$data1[0]."/".$data1[0].".jpg";
+            if(isset($dir))
+                echo "<img class='pfp' src='{$dir}' alt='Photo de profil'>";
             else{
-                echo "<img class='pfp' src='../img/default.png' alt='Photo de profil'>";
-            }
+                
+                echo "<img class='pfp' src='../default.jpg' alt='Photo de profil'>";
             }
             ?>
             <br>
