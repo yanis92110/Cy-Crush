@@ -36,19 +36,32 @@ $pseudo=json_encode($pseudo);
         <meta charset="utf-8">
         <title>Accueil sub</title>
         <link rel="stylesheet" href="derniersprofils.css">
+        <script src="script_upload.js"></script>
     </head>
     <body>
         
+        
 
         <div class="global">
+            
             <div class="button-container">
-                
-                <button class="button" onclick="redirect_home()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
-                    <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
-                </svg>
-                </button>
-
+                <?php
+                $data1=get_data1($_SESSION['id_user']);
+                if($data1[8]==1){
+                    $redirect="redirect_admin()";
+                }
+                else if($data1[4]==0){
+                    $redirect="redirect_non_sub()";
+                }
+                else if($data1[4]== 1){
+                    $redirect= "redirect_sub()";
+                }
+                echo '<button class="button2" onclick='.$redirect.'>';
+                echo '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">';
+                    echo '<path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>';
+                echo "</svg>";
+                echo "</button>";
+                ?>
                 <button class="button" onclick="redirect_search()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor" class="icon">
                     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -93,20 +106,16 @@ $pseudo=json_encode($pseudo);
         var i=1;
 
         // Créer et ajouter les nouvelles div avec les informations des 10 derniers profil
-        var tableau = [];
 
         profilesdata2.forEach(function(profile,i) {
             if(profilesdata2[i][0]!=pseudo){
-                tableau.push(profile);
-                console.log(tableau[i]);
                 //Ne pas afficher son profil
                 var profileDiv = document.createElement("div");
                 profileDiv.className="vignette";
-                // A FAIRE PR LA PFP
-                //var pfp=
-                //profileDiv.innerHTML = "<img src="" "
                 console.log(profile[0]);
                 profileDiv.innerHTML += 'Pseudo: ' + profilesdata2[i][0] + '<br>' + "Sexe: " + profilesdata1[i][5] + "<br> Classement: " + profilesdata1[i][6] + '<div> Taille: ' + profilesdata2[i][5] + "<br>" + "Main forte: " + profilesdata2[i][6] + "<br>" + "Revers: " + profilesdata2[i][7] + "mains <br>";
+                var path="../img/"+profile[0]+"/"+profile[0]+".jpg";
+                profileDiv.innerHTML += '<img class = "pfp" src='+path+'>';
                 profileDiv.onclick=function(){
                     var url="other_user_profil.php?p=" + encodeURIComponent(profile[0]);
                     window.location.href=url;
@@ -118,49 +127,6 @@ $pseudo=json_encode($pseudo);
             };
             //i=i+1;
         });
-        
-
-function redirect_upload(){
-    window.location.href="upload.php";
-}
-
-function redirect_profile(){
-    window.location.href = "../menu/user_profil.php";
-}
-
-function redirect_pfp(){
-    window.location.href = "pfp.php";
-}
-
-function redirect_modif_infos(){
-    window.location.href = "modif_info_form.php";
-}
-function redirect_home(){
-    window.location.href="../menu/menu_user_nonsub.php";
-}
-function redirect_search(){
-    window.location.href="../menu/recherche_form.php";
-}
-function redirect_store(){
-    window.location.href="../accueil/abonnements.html";
-}
-
-document.getElementById('logoutBtn').addEventListener('click', function() {
-    fetch("destroy_session.php", {
-        method: "POST"
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === "success") {
-            console.log(data.message); // "Session détruite avec succès."
-            window.location.href ="../accueil/accueil.html";
-        } else {
-            console.error("Erreur lors de la destruction de la session.");
-        }
-    })
-    .catch(error => console.error("Erreur:", error));
-});
-
 
     </script>
 </html>
