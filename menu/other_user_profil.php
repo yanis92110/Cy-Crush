@@ -71,8 +71,9 @@
     
         <div class="container">
             <?php
-            if(isset($_SESSION['pfp'.$_SESSION['pseudo']]))
-                echo "<img class='pfp' src='{$_SESSION['pfp'.$_SESSION['pseudo']]}' alt='Photo de profil'>";
+            $dir = "../img/".$data1[0]."/".$data1[0].".jpg";
+            if(isset($dir))
+                echo "<img class='pfp' src='{$dir}' alt='Photo de profil'>";
             else{
                 //$_SESSION['pfp'.$_SESSION['pseudo']] = $_COOKIE['pfp'.$_SESSION['pseudo']];
                 echo "<img class='pfp' src='https://pbs.twimg.com/media/FtsxswzaUAAZXJj.jpg:large' alt='Photo de profil'>";
