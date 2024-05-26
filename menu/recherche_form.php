@@ -7,7 +7,17 @@
     <link rel="stylesheet" type="text/css" href="/messagerie/base/style.css">
 </head>
 <body>
+
+    <?php
+        session_start();
+        $pseudo = isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : 'Invité';
+    ?>
+
     <div class="global">
+
+        <h2 id="logo"> CY Roland </h2>
+        <h2 id="logobis"> Garros </h2>
+
         <div class="button-container">
             <button class="button" onclick="redirect_home()">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
@@ -33,6 +43,12 @@
                 <circle r="1" cy="21" cx="20"></circle>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
+            </button>
+
+            <button class="button" id="logoutBtn" onclick="redirect_accueil()">
+                <svg viewBox="0 0 512 512" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor" class="icon">
+                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                </svg>
             </button>
 
         </div>
@@ -79,7 +95,7 @@
             </form>
 
             <fieldset id="find">
-                <legend><h2> Recherchez les tennismen/women les plus adaptés à vos attentes ! </h2></legend>
+                <legend style="text-align: center;"><h2> Recherchez les tennismen/women les plus adaptés à vos attentes ! </h2></legend>
             </fieldset>
 
             <h1>MESSAGERIE</h1>
@@ -98,7 +114,7 @@
             </div>
 
             <div id="delete_report">
-                <button class="btn">
+                <button class="btn" onclick="deleteMessage()">
                     <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
                         <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
                     </svg>
@@ -109,6 +125,9 @@
         
     </div>
 
+    <script>
+        var userPseudo = "<?php echo $pseudo; ?>";
+    </script>
     <script src="/messagerie/base/script.js"></script>
     <script src="script_upload.js"></script>
 
