@@ -46,18 +46,8 @@ Ce projet sera stocké sur un dépôt GitHub
 
 ## Installation et Utilisation
 
-### 1.Cloner le dépôt
-
-git clone https://github.com/yanis92110/Cy_crush.git
-
-### 2.Installer les dépendances
-
-cd repository
-npm install
-
-### 3.Lancer l'application
-
-npm start
+1. Télécharger le dossier
+   Téléchargez le dossier depuis
 
 ## Contributeurs
 ### Membres :
