@@ -17,14 +17,10 @@
         $data1= get_data1($indice);
         $data2 = array_slice($data2,1,null,true);
     }
-
-    if(isset($_GET["i"])){
-        echo "rentré dans le i";
-        $indice = intval($_GET["i"]);
-        $data1 = get_data1($indice);
-        $data2 = get_data2($indice);
-        $data2 = array_slice($data2,1,null,true);
+    else{
+        echo "DATA NOT RECEIVED";
     }
+
 ?>
 <!DOCTYPE html>
 <html>
