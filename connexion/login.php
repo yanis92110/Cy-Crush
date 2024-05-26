@@ -26,7 +26,7 @@ if(isset($_POST['pseudo_login']) && isset($_POST['mdp_login'])){
                 exit();
             }
             else{
-                if($list_sub[$indice] == 1){
+                if($list_sub[$indice] == 1 && $list_admin[$indice != 1]){
                     header("Location: ../menu/menu_user_sub.php");
                     exit();
                 }
