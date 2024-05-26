@@ -12,7 +12,6 @@
             }
             $indice=$indice+1;
         }
-        echo $indice;
         $data2= get_data2($indice);
         $data1= get_data1($indice);
         $data2 = array_slice($data2,1,null,true);
