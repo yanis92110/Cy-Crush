@@ -55,9 +55,13 @@ $data2 = array_slice($data2,1,null,true);
             <?php
             if(isset($_SESSION['pfp'.$_SESSION['pseudo']]))
                 echo "<img class='pfp' src='{$_SESSION['pfp'.$_SESSION['pseudo']]}' alt='Photo de profil'>";
-            else{
+            else if (isset($_COOKIE['pfp'.$_SESSION['pseudo']])){
                 $_SESSION['pfp'.$_SESSION['pseudo']] = $_COOKIE['pfp'.$_SESSION['pseudo']];
                 echo "<img class='pfp' src='{$_SESSION['pfp'.$_SESSION['pseudo']]}' alt='Photo de profil'>";
+            }
+            else{
+                echo "<img class='pfp' src='../img/default.png' alt='Photo de profil'>";
+            }
             }
             ?>
             <br>
