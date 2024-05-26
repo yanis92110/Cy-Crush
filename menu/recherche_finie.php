@@ -98,6 +98,8 @@ $pseudo=json_encode($pseudo);
                     var url="other_user_profil.php?p=" + encodeURIComponent(profile[0]);
                     window.location.href=url;
                 };
+                var path="../img/"+profile[0]+"/"+profile[0]+".jpg";
+                profileDiv.innerHTML += '<img class = "pfp" src='+path+'>';
                     
                     
                 profilesDiv.appendChild(profileDiv);
