@@ -3,13 +3,22 @@ body{
 }
 
 h1{
-    position: fixed;
+    position: absolute;
     right: 95px; 
     top: 76px;
 }
 
+h3{
+    position: absolute;
+    right: 60px; 
+    top: 390px;
+    z-index: 1000;
+}
+
+
+
 .conversation-container-css{
-    position: fixed;
+    position: absolute;
     right: 20px; 
     bottom: 48.5%; 
     transform: translateY(50%);
@@ -23,6 +32,9 @@ h1{
     color: black;
     font-size: 16px;
     font-weight: bold;
+    overflow-y: scroll;
+    scrollbar-color: bisque rgb(94, 94, 170);
+    scrollbar-width: thin;
 }
 
 
@@ -39,7 +51,7 @@ h1{
 }
 
 .messages-container-css{
-    position: fixed;
+    position: absolute;
     right: 20px;  
     bottom: 48.8%; 
     transform: translateY(50%);
@@ -55,7 +67,9 @@ h1{
     font-weight: bold;
     padding: 5px;
     line-height: 2.5;
-
+    overflow-y: scroll;
+    scrollbar-color: bisque rgb(94, 94, 170);
+    scrollbar-width: thin;
 }
 
 #messages-container{
@@ -63,7 +77,7 @@ h1{
 }
 
 #messageStyle{
-    position: fixed;
+    position: absolute;
     right: 20px; 
     top: 12.5%; 
     transform: translateY(50%);
@@ -94,9 +108,9 @@ h1{
 }
 
 #chat{
-    position: fixed;
+    position: absolute;
     right: 20px; 
-    bottom: 16.8%; 
+    bottom: 15%; 
     transform: translateY(50%);
     width: 25%; 
     height: 22px; 
