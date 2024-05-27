@@ -24,6 +24,8 @@ Accès à la messagerie privée, possibilité de voir qui a consulté son profil
 Gestion complète des utilisateurs et de leurs messages, modification et suppression de profils en cas d'abus.
 Fonctionnalités détaillées
 
+----------------------------------------------------------
+
 ### Module Visiteur
 Page d'inscription et de connexion, avec éventuellement un "free tour".
 
