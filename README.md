@@ -26,10 +26,11 @@ Fonctionnalités détaillées
 
 ----------------------------------------------------------
 
-### Module Visiteur
+## Module Visiteur
+
 Page d'inscription et de connexion, avec éventuellement un "free tour".
 
-### Module Utilisateur
+## Module Utilisateur
 
 Gestion et modification de profil : Pseudonyme, Sexe, Date de naissance, Profession, Lieu de résidence, Situation amoureuse et familiale, Description physique, Informations personnelles, Photos.
 Recherche et consultation des profils : Moteur de recherche par mots-clés, critères avancés (âge, situation amoureuse, centres d'intérêts), possibilité de voir une version abrégée des profils.
@@ -39,15 +40,13 @@ Module Abonné
 Consultation des visiteurs : Voir qui a consulté son profil.
 Gestion de messagerie : Envoi, réception et suppression de messages, blocage d'utilisateurs, signalement de messages suspects.
 
-### Module Administrateur
+## Module Administrateur
 
 Gestion des utilisateurs : Liste des utilisateurs, accès aux informations personnelles, modification et suppression de profils.
 Gestion des messages : Réception des signalements, accès à la messagerie des utilisateurs, suppression de messages.
 
-### Dépôt GitHub
-Ce projet sera stocké sur un dépôt GitHub
 
-## Installation et Utilisation
+# Installation et Utilisation
 
 1. Télécharger le dossier
    Téléchargez le dossier en cliquant sur `code` puis sur `Download zip`
