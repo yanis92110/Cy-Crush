@@ -14,13 +14,13 @@ Nous avons choisi comme thème le sport, en créant le premier site qui facilite
 ### Interface Web
 L'interface sera divisée en plusieurs modules :
 
-### Visiteur
+* ### Visiteur
 Accès limité, possibilité de voir une page de publicité et des photos d'utilisateurs sans accès aux profils.
-### Utilisateur
+* ### Utilisateur
 Possibilité de s'inscrire, créer et modifier son profil, consulter les profils des autres utilisateurs, et voir les offres d'abonnement.
-### Abonné
+* ### Abonné
 Accès à la messagerie privée, possibilité de voir qui a consulté son profil et de communiquer avec les autres utilisateurs.
-### Administrateur
+* ### Administrateur
 Gestion complète des utilisateurs et de leurs messages, modification et suppression de profils en cas d'abus.
 Fonctionnalités détaillées
 
