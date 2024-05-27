@@ -32,24 +32,30 @@ Page d'inscription et de connexion, avec éventuellement un "free tour".
 
 ## Module Utilisateur
 
-Gestion et modification de profil : Pseudonyme, Sexe, Date de naissance, Profession, Lieu de résidence, Situation amoureuse et familiale, Description physique, Informations personnelles, Photos.
-Recherche et consultation des profils : Moteur de recherche par mots-clés, critères avancés (âge, situation amoureuse, centres d'intérêts), possibilité de voir une version abrégée des profils.
-Consultation des offres d'abonnement : Présentation des différentes offres, possibilité de choisir un abonnement.
-Module Abonné
+* Gestion et modification de profil :
+  Pseudonyme, Sexe, Date de naissance, Profession, Lieu de résidence, Situation amoureuse et familiale, Description physique, Informations personnelles, Photos.
+* Recherche et consultation des profils :
+  Moteur de recherche par mots-clés, critères avancés (âge, situation amoureuse, centres d'intérêts), possibilité de voir une version abrégée des profils.
+* Consultation des offres d'abonnement :
+  Présentation des différentes offres, possibilité de choisir un abonnement.
 
-Consultation des visiteurs : Voir qui a consulté son profil.
-Gestion de messagerie : Envoi, réception et suppression de messages, blocage d'utilisateurs, signalement de messages suspects.
+## Module Abonné
+
+* Consultation des visiteurs :
+   Gestion de messagerie : Envoi, réception et suppression de messages, blocage d'utilisateurs, signalement de messages suspects.
 
 ## Module Administrateur
 
-Gestion des utilisateurs : Liste des utilisateurs, accès aux informations personnelles, modification et suppression de profils.
-Gestion des messages : Réception des signalements, accès à la messagerie des utilisateurs, suppression de messages.
+* Gestion des utilisateurs :
+  Liste des utilisateurs, accès aux informations personnelles, modification et suppression de profils.
+* Gestion des messages :
+  Réception des signalements, accès à la messagerie des utilisateurs, suppression de messages.
 
 
 # Installation et Utilisation
 
 1. Télécharger le dossier
-   Téléchargez le dossier en cliquant sur `code` puis sur `Download zip`
+   * Téléchargez le dossier en cliquant sur `code` puis sur `Download zip`
 2. Extraction
    * Décompresser le dossier téléchargé puis lancer un terminal dans ce-dit dossier.
    * Exécuter la commande `php -S localhost:8080`
