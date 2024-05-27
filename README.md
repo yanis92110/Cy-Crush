@@ -4,7 +4,8 @@
 
 ### Objectif et Modalités
 
-Le but de ce projet est de réaliser un site de rencontre permettant à des utilisateurs de faire connaissance les uns avec les autres en fonction de différents critères, puis d'échanger entre eux. Plusieurs types d'utilisateurs seront prévus, avec des fonctionnalités différenciées selon leur abonnement. Le site inclura la création et manipulation de fichiers, manipulables par des administrateurs.
+Le but de ce projet est de réaliser un site de rencontre permettant à des utilisateurs de faire connaissance les uns avec les autres en fonction de différents critères, puis d'échanger entre eux.
+Plusieurs types d'utilisateurs seront prévus, avec des fonctionnalités différenciées selon leur abonnement. Le site inclura la création et manipulation de fichiers, manipulables par des administrateurs.
 
 ### Choix du Thème
 Nous avons choisi comme thème le sport, en créant le premier site qui facilite la rencontre de tennisman/woman afin de trouver le partenaire de jeu idéal et de s'éléver au rang des plus grands joueurs, peut-être jouerez vous un jour avec eux (voir modalités de l'abonnement sub).
@@ -55,6 +56,6 @@ Ce projet sera stocké sur un dépôt GitHub
    * Ouvrir le dossier `accueil` puis lancer le fichier `accueil.html` et amusez vous !
 ## Contributeurs
 ### Membres :
-Yanis Laïd
-Elyes Dos Santos
-Jean-Baptiste Andrawas
+* Yanis Laïd
+* Elyes Dos Santos
+* Jean-Baptiste Andrawas
