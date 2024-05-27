@@ -47,8 +47,12 @@ Ce projet sera stocké sur un dépôt GitHub
 ## Installation et Utilisation
 
 1. Télécharger le dossier
-   Téléchargez le dossier depuis
-
+   Téléchargez le dossier en cliquant sur `code` puis sur `Download zip`
+2. Extraction
+   * Décompresser le dossier téléchargé puis lancer un terminal dans ce-dit dossier.
+   * Exécuter la commande `php -S localhost:8080`
+3. Lancement
+   * Ouvrir le dossier `accueil` puis lancer le fichier `accueil.html` et amusez vous !
 ## Contributeurs
 ### Membres :
 Yanis Laïd
