@@ -33,6 +33,10 @@ function redirect_paiement(){
     window.location.href="../menu/paiement.php";
 }
 
+function redirect_admin(){
+    document.location.href = "admin.php";
+}
+
 document.getElementById('logoutBtn').addEventListener('click', function() {
     fetch("destroy_session.php", {
         method: "POST"
