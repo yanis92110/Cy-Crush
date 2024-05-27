@@ -1,0 +1,207 @@
+@font-face { font-family: Sport; src: url('../accueil/Sport.ttf'); } 
+@font-face { font-family: FunnySports; src: url('../accueil/FunnySports.ttf'); } 
+
+body{
+    background-color: rgb(247, 212, 166);
+}
+
+.global{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+
+#logo{
+    position: absolute;
+    color : rgb(94, 94, 170);
+    font-size: 50px;
+    font-family: Sport;
+    font-weight: lighter;
+    top: 0.2%;
+    left: 3%;
+}
+
+#logobis{
+    position: absolute;
+    color : rgb(94, 94, 170);
+    font-size: 50px;
+    font-family: Sport;
+    font-weight: lighter;
+    top: 3.7%;
+    left: 4%;
+
+}
+
+.button-container {
+    position: fixed;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    background-color: rgb(94, 94, 170);
+    width: 750px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    bisque 5px 10px 15px;
+    z-index: 1000;
+}
+
+.button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 20px;
+}
+
+#derniers_inscrits{
+    top: 80px;
+    left: 20px;
+    position: absolute;
+    height: 900px;
+    width: 65%;
+    margin: 1%;
+    display:inline-flex;
+}
+
+#creationForm{
+    position: absolute;
+    left: 20px;
+    align-items: center;
+    border: 2px dashed black;
+    top: 30%;
+    width: 200px;
+    height: 270px;
+    background-color: bisque;
+    font-size: large;
+}
+
+.rad{
+    text-align:center;
+    display:inline-flex;
+    margin-left: 10%;
+}
+  
+.rad2{
+    display:inline-flex;
+    margin:2%;
+}
+
+.title{
+    text-align: center;
+}
+
+#classement{
+    margin-left: 10%;
+}
+
+#searchBtn{
+    margin-left: 27%;
+}
+
+#find{
+    top: 80px;
+    left: 12%;
+    position: absolute;
+    height: 900px;
+    width: 58%;
+    margin: 1%;
+    display:inline-flex;
+}
+
+.vignette{
+    display: flex;
+    justify-content: center;
+    margin: 3px;
+    align-items: center;
+    background-color: goldenrod;
+    top: 40%;
+    height: 400px;
+    width: 250px;
+    flex-direction: column;
+    border-radius: 30px;
+    font-size:large ;
+    line-height: 30px;
+    left: 2px;
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur et la hauteur */
+}
+
+#profilContainer{
+    
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    
+    width:1200px;
+    height:1500px;
+  
+    border-radius: 80px;
+
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes */
+    gap: 20px; /* Espace entre les éléments */
+  
+}
+
+.pfp {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#profilContainer2{
+    
+    display:inline-flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+  
+    position: absolute;
+    top: 95%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    
+    width:950px;
+    height:1500px;
+  
+    
+
+    flex-wrap: wrap; /* Permet aux éléments de se répartir sur plusieurs lignes */
+    gap: 20px; /* Espace entre les éléments */
+
+    overflow-y: scroll;
+    scrollbar-color: bisque rgb(94, 94, 170);
+    scrollbar-width: thin;
+  
+}
+
+#profil_container{
+    position: absolute;
+    margin-top: 30%;
+
+}
